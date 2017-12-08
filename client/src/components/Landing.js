@@ -8,8 +8,10 @@ class Landing extends Component {
       <div>
         <h1>Signed in</h1>
         <h3>Please create an item</h3>
-        <Link to="/item/new" className="btn-floating btn-large red">
-          <i className="large material-icons">add</i>
+        <Link to="/item/new" >
+        <button className="btn green">
+          Create a message<i className="right material-icons">add</i>
+          </button>
         </Link>
 
       </div>

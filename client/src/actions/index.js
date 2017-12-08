@@ -5,6 +5,10 @@ export const fetchUser = () => {
   return async dispatch => {
     const res = await axios.get("/api/current_user");
     dispatch({ type: FETCH_USER, payload: res.data });
-  };
+  };  
 };
 
+export const submitMessage = async (values) => {
+  const res = await axios.post('/api/messages', values);
+  // dispatch({ type: FETCH_USER, payload: res.data });
+};

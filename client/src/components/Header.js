@@ -20,7 +20,7 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper green">
          <Link style={{ margin: '0 10px'}} to={this.props.auth ? '/landing' : '/'} className="center brand-logo">
          Login App
          </Link>
@@ -38,3 +38,8 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Header);
+
+
+{/* <p className="right">
+              Sent On: {new Date(survey.dateSent).toLocaleDateString()}
+            </p> */}

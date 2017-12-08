@@ -6,7 +6,7 @@ const Message = mongoose.model('messages')
 module.exports = (app) => {
 
     app.get('/api/messages', requireLogin, async (req, res) => {
-        const messages = await Message.find({ _user: req.user.id})
+        const messages = await Message.find({})
         res.send(messages)        
     })
 

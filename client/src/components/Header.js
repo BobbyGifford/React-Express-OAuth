@@ -12,6 +12,7 @@ class Header extends Component {
       default:
         return [
           <li key="3" style={{ margin: '0 10px'}}>Hello: {this.props.auth.displayName}</li>,
+          <li key="1"><Link to="/messagesList"><i className="material-icons">apps</i></Link></li>,
           <li key="2"><a href="/api/logout">Logout</a></li>,
       ]
     }
@@ -38,8 +39,3 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Header);
-
-
-{/* <p className="right">
-              Sent On: {new Date(survey.dateSent).toLocaleDateString()}
-            </p> */}

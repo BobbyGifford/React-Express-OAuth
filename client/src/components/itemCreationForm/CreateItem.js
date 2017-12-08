@@ -3,7 +3,6 @@ import FormComponent from "./formComponent";
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import { submitMessage } from "../../actions";
-import { withRouter } from 'react-router-dom';
 
 
 class CreateItem extends Component {

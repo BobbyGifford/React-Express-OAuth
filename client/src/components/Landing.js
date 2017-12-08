@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-
 class Landing extends Component {
   renderContent() {
     return (
@@ -13,7 +12,6 @@ class Landing extends Component {
           Create a message<i className="right material-icons">add</i>
           </button>
         </Link>
-
       </div>
     );
   }

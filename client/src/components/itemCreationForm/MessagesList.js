@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchMessages } from "../../actions";
+import { Link } from 'react-router-dom';
 
 class MessagesList extends Component {
   componentDidMount() {
@@ -16,7 +17,7 @@ class MessagesList extends Component {
       return (
         <div className="card" key={message._id}>
           <div className="card-content">
-            <p>Message: {message.message}</p>
+            <h5>{message.message}</h5>
             <p>User: {message.displayName}</p>
             <p>
               Date Posted: {new Date(message.datePosted).toLocaleDateString()}
@@ -29,9 +30,16 @@ class MessagesList extends Component {
 
   render() {
     return (
+      <div>
     <div style={{ textAlign: "center" }}>
       <h4>This is a list of all the messages left by other visitors</h4>
     {this.renderContent()}
+    </div>
+    <div className="fixed-action-btn">
+    <Link to="/item/new" className="btn-floating btn-large green">
+      <i className="large material-icons">mode_edit</i>
+    </Link>
+  </div>
     </div>
   )
   }

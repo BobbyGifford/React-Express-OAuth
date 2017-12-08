@@ -9,7 +9,7 @@ export const fetchUser = () => {
 };
 
 export const submitMessage = async (values) => {
-  const res = await axios.post('/api/messages', values);
+  await axios.post('/api/messages', values);
 };
 
 export const fetchMessages = () => async dispatch => {

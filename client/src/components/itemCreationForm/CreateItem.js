@@ -8,7 +8,7 @@ import { submitMessage } from "../../actions";
 class CreateItem extends Component {
   submit = values => {
     submitMessage(values)
-    this.props.history.push('/landing')
+    this.props.history.push('/messagesList')
   };
 
   renderContent() {

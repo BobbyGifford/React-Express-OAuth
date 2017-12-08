@@ -5,8 +5,7 @@ class Landing extends Component {
   renderContent() {
     return (
       <div>
-        <h1>Signed in</h1>
-        <h3>Please create an item</h3>
+        <h2>Welcome</h2>
         <Link to="/item/new" >
         <button className="btn green">
           Create a message<i className="right material-icons">add</i>

@@ -8,7 +8,7 @@ class Landing extends Component {
         <h2>Welcome</h2>
         <Link to="/item/new" >
         <button className="btn green">
-          Create a message<i className="right material-icons">add</i>
+          Create a message
           </button>
         </Link>
       </div>

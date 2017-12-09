@@ -18,7 +18,7 @@ class MessagesList extends Component {
         <div className="card" key={message._id}>
           <div className="card-content">
             <h5>{message.message}</h5>
-            <p>User: {message.displayName}</p>
+            <p>Posted by: {message.displayName}</p>
             <p>
               Date Posted: {new Date(message.datePosted).toLocaleDateString()}
             </p>
@@ -33,6 +33,12 @@ class MessagesList extends Component {
       <div>
     <div style={{ textAlign: "center" }}>
       <h4>This is a list of all the messages left by other visitors</h4>
+      <Link to="/item/new" >
+        <button className="btn green hide-on-med-and-down">
+          Create a message<i className="right material-icons">add</i>
+          </button>
+        </Link>
+
     {this.renderContent()}
     </div>
     <div className="fixed-action-btn">

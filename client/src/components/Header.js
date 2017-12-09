@@ -10,7 +10,7 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google/">Login with Google</a>
+            <a href="/auth/google/">Sign Up or Login<i className="material-icons left">verified_user</i></a>
           </li>
         );
       default:
@@ -36,7 +36,7 @@ class Header extends Component {
         <div className="nav-wrapper green">
           <Link
             style={{ margin: "0 10px" }}
-            to={this.props.auth ? "/messagesList" : "/"}
+            to={this.props.auth ? "/landing" : "/"}
             className="center brand-logo"
           >
             Login App

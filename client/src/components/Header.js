@@ -16,7 +16,7 @@ class Header extends Component {
       default:
         return [
           <li key="3">
-            <Link to="/landing">{this.props.auth.displayName}<i className="material-icons left">person</i></Link>
+            <Link to="/">{this.props.auth.displayName}<i className="material-icons left">person</i></Link>
           </li>,
           <li key="1">
             <Link to="/messagesList">

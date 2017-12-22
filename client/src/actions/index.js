@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_USER, FETCH_MESSAGES, FETCH_MESSAGE } from "./types";
+import { FETCH_USER, FETCH_MESSAGES, FETCH_MESSAGE, SET_TRUE, SET_FALSE } from "./types";
 
 export const fetchUser = () => {
   return async dispatch => {
@@ -24,4 +24,16 @@ export const fetchMessage = (messageId) => {
   
     dispatch({ type: FETCH_MESSAGE, payload: res.data })
   }  
+}
+
+export const loadingTrue = () => dispatch => {
+  var setTrue = true;
+
+  dispatch({ type: SET_TRUE, payload: setTrue })
+}
+
+export const loadingFalse = () => dispatch => {
+  var setFalse = false;
+
+  dispatch({ type: SET_FALSE, payload: setFalse })
 }

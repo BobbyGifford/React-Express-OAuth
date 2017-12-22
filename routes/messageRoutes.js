@@ -17,7 +17,8 @@ module.exports = (app) => {
         const message = new Message({
             message: messageBody,
             displayName: req.user.displayName,
-            datePosted: Date.now()
+            datePosted: Date.now(),
+            googleId: req.user.googleId
         })
         console.log(message);
         await message.save();

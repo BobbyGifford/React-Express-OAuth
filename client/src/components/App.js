@@ -7,7 +7,8 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Home from "./Home";
 import CreateItem from "./itemCreationForm/CreateItem"
-import MessagesList from "./itemCreationForm/MessagesList"
+import MessagesList from "./MessagesList"
+import MessageItem from "./MessageItem";
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route exact path="/landing" component={Landing} />
             <Route path="/item/new" component={CreateItem} />
             <Route path="/messagesList" component={MessagesList} />
+            <Route path="/:id/message" component={MessageItem} />
           </div>
         </div>
       </BrowserRouter>

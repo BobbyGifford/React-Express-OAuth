@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_USER, FETCH_MESSAGES } from "./types";
+import { FETCH_USER, FETCH_MESSAGES, FETCH_MESSAGE } from "./types";
 
 export const fetchUser = () => {
   return async dispatch => {
@@ -17,3 +17,11 @@ export const fetchMessages = () => async dispatch => {
 
   dispatch({ type: FETCH_MESSAGES, payload: res.data });
 };
+
+export const fetchMessage = (messageId) => {
+  return async dispatch => {
+    const res = await axios.get('/api/message/' + messageId);
+  
+    dispatch({ type: FETCH_MESSAGE, payload: res.data })
+  }  
+}

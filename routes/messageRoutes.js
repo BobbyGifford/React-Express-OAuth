@@ -24,5 +24,14 @@ module.exports = (app) => {
         res.send(message);
     })
 
+    app.get('/api/message/:id', requireLogin, async (req, res) => {
+        const messageId = req.params.id;
+        console.log(messageId)
+        const message = await Message.findById({ _id: messageId })
+        console.log(message)
+
+        res.send(message)
+    })
+
 
 }

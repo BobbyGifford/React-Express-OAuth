@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchMessages } from "../../actions";
+import * as actions from "../actions";
 import { Link } from 'react-router-dom';
 
 class MessagesList extends Component {
@@ -12,6 +12,10 @@ class MessagesList extends Component {
     this.props.fetchMessages();
   }
 
+  onViewItem = (index) => {
+    console.log(index)
+  }
+
   renderContent() {
     return this.props.messages.reverse().map(message => {
       return (
@@ -21,6 +25,11 @@ class MessagesList extends Component {
             <p>Posted by: {message.displayName}</p>
             <p>
               Date Posted: {new Date(message.datePosted).toLocaleDateString()}
+              </p>
+              <p>
+              <Link to={"/" + message._id + "/message"}>
+              <button className="btn green">Inspect</button>
+              </Link>
             </p>
           </div>
         </div>
@@ -51,8 +60,8 @@ class MessagesList extends Component {
   }
 }
 
-function mapStateToProps({ messages }) {
-  return { messages };
+function mapStateToProps({ messages, auth }) {
+  return { messages, auth };
 }
 
-export default connect(mapStateToProps, { fetchMessages })(MessagesList);
+export default connect(mapStateToProps, actions)(MessagesList);

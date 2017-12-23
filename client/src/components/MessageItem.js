@@ -24,7 +24,7 @@ class MessageItem extends Component {
     if(this.props.auth.googleId === googleId ) {
     this.setState({ button: <Link to={'/messagesList'}><button onClick={()=> this.handleButton()} className="btn red">Delete</button></Link> })
     } else {
-      this.setState({ button: <p>Created by: {this.props.auth.displayName}</p> })
+      this.setState({ button: <p>Created by: {messageData.data.displayName}</p> })
     }
   }
 

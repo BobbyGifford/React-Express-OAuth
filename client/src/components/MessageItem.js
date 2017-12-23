@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class MessageItem extends Component {
   constructor(props) {
@@ -21,10 +22,15 @@ class MessageItem extends Component {
 
     this.setState({ message: messageData.data.message });
     if(this.props.auth.googleId === googleId ) {
-    this.setState({ button: <button className="btn red">Delete</button> })
+    this.setState({ button: <Link to={'/messagesList'}><button onClick={()=> this.handleButton()} className="btn red">Delete</button></Link> })
     } else {
       this.setState({ button: <p>Created by: {this.props.auth.displayName}</p> })
     }
+  }
+
+  async handleButton(){
+    const messageId = this.props.match.params.id;
+    await axios.delete('/api/message/' + messageId)
   }
 
   renderContent() {
